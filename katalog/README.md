@@ -42,7 +42,7 @@ urlpatterns = [
 ```
 
 ### 3. Mapping the data into HTML
-This function will loop through each data. It will show all images from `img_url`, and when any of the images are clicked, it will trigger the `createTable()` function. `createTable` function will take `item_name`, `rating`, `item_price`, 'item_stock`, `description`, `item_url` as its parameter.
+This function will loop through each data. It will show all images from `img_url`, and when any of the images are clicked, it will trigger the `createTable()` function. `createTable` function will take `item_name`, `rating`, `item_price`, `item_stock`, `description`, `item_url` as its parameter.
 ```HTML
 {% for item in list_item %}
       <img src={{item.img_url}} onclick="createTable(['{{item.item_name}}',
@@ -86,3 +86,6 @@ function createTable(arr){
       document.querySelector('table.item-tbl').scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
 ```
+### 4. Deploy to Heroku
+Create a new app on Heroku. Then go to settings on the GitHub repository to create a new **Secret**. Input Heroku API Key and the App name, and we're goof to go!
+[Heroku App]("https://pbp-asg2.herokuapp.com/katalog/")
