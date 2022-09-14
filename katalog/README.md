@@ -42,8 +42,8 @@ urlpatterns = [
 ```
 
 ### 3. Mapping the data into HTML
-```HTML
 This function will loop through each data. It will show all images from `img_url`, and when any of the images are clicked, it will trigger the `createTable()` function. `createTable` function will take `item_name`, `rating`, `item_price`, 'item_stock`, `description`, `item_url` as its parameter.
+```HTML
 {% for item in list_item %}
       <img src={{item.img_url}} onclick="createTable(['{{item.item_name}}',
                                                       '{{item.rating}}',
