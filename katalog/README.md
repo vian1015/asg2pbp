@@ -10,10 +10,12 @@ By using a virtual environment, multiple versions of Python, packages, library a
 
 ## Implementation
 ### 1. Create a function on `views.py`
+First off,  import the model `CatalogItem` from `katalog.models`
 ```py
 from katalog.models import CatalogItem
-
-
+```
+Collect the QuerySet from `CatalogItem`, then parse it as `context` with other datas. We then call the render function, which will return `katalog.html` based on the data we sent.
+```py
 def show_katalog(request):
     data_katalog_item = CatalogItem.objects.all()
     context = {
@@ -24,4 +26,4 @@ def show_katalog(request):
 
     return render(request, "katalog.html", context)
 ```
-This function imports the model `CatalogItem`, which will be parsed in `context` as `list_item` with other datas: `name` and `student_id`. The function the calls the render function, which will then return the template (in this case `katalog.html`).
+### 2. Create a routing map to `views.py`
