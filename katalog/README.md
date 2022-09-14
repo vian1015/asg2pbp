@@ -1,6 +1,3 @@
-# Katalog
-https://pbp-asg2.herokuapp.com/katalog/
-
 # MVT (Models, Views, and Template)
 ## Diagram
 ![](diagram.png)
@@ -88,4 +85,5 @@ function createTable(arr){
 ```
 ### 4. Deploy to Heroku
 Create a new app on Heroku. Then go to settings on the GitHub repository to create a new **Secret**. Input Heroku API Key and the App name, and we're goof to go!
-[Heroku App](https://pbp-asg2.herokuapp.com/katalog/)
+HEROKU APP:
+[LINK](https://pbp-asg2.herokuapp.com/katalog/)
