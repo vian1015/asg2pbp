@@ -6,13 +6,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   {% block meta %}
   {% endblock meta %}
 </head>
 
 <body>
+  <div class="menu-bar">
+    <ul>
+      <li><a href="../"><i class="fa fa-home"></i>Home</a></li>
+      <li><a href="#"><i class="fa fa-book"></i>Tutorial</a>
+        <div class="sub-menu-a">
+          <ul>
+            <li><a href="#">???</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#"><i class="fa fa-pencil"></i>Assignment</a>
+        <div class="sub-menu-a">
+          <ul>
+            <li><a href="/katalog"><i class="fa fa-pencil"></i>Assignment 2 - Catalog</a></li>
+            <li><a href="#">???</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
   {% block content %}
   {% endblock content %}
+
+  <footer>
+    <div class="web-footer">
+      Jovian M - 2106720891
+    </div>
+  </footer>
 </body>
 
 </html>
