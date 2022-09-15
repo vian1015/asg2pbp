@@ -11,7 +11,7 @@ First off,  import the model `CatalogItem` from `katalog.models`
 ```py
 from katalog.models import CatalogItem
 ```
-Collect the QuerySet from `CatalogItem`, then parse it as `context` with other datas. We then call the render function, which will combine the given template (in this case `katalog.html`) with `context`, and returns an HTTP Response.
+Collect the QuerySet from `CatalogItem`, then parse it as `context` with other datas. We then call the render function, which will combine the given template (in this case `katalog.html`) with `context`, and returns a rendered HTML template.
 ```py
 def show_katalog(request):
     data_katalog_item = CatalogItem.objects.all()
