@@ -12,20 +12,9 @@ In general, data delivery is necessary for all applications. Data delivery is us
 python manage.py startapp mywatchlist
 ```
 ### Add URL for `mywatchlist`
+Add to `urlpatterns` in `urls.py` that is on `project_django` directroy
 ```py
-#urls.py
-from django.urls import path
-from mywatchlist.views import show_mywatchlist
-from mywatchlist.views import show_xml
-from mywatchlist.views import show_xml_by_id 
-from mywatchlist.views import show_json
-from mywatchlist.views import show_json_by_id
-
-app_name = 'mywatchlist'
-
-urlpatterns = [
-    path('/', show_mywatchlist, name='show_mywatchlist'),
-]
+path('mywatchlist/', include('mywatchlist.urls'))
 ```
 ### Create a model for `mywatchlist`
 ```py
