@@ -211,5 +211,5 @@ path('json/<int:id>', show_json_by_id, name='show_json_by_id'),
 ```
 
 ### Deploy to heroku
-Add `python manage.py loaddata initial_watchlist_data.json` into `Procfile` so that heroku can load `initial_watchlist_data.json`
+Add `python manage.py loaddata initial_watchlist_data.json` into `Procfile` so that heroku can load `initial_watchlist_data.json`.
 git add, commit, and push, and tada!
