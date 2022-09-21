@@ -1,0 +1,116 @@
+[
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":1,
+        "fields": {
+            "watched": true,
+            "title": "Fullmetal Alchemist: Brotherhood",
+            "rating": 5,
+            "release_date": "Apr 5, 2009",
+            "review": "A good solid anime!"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":2,
+        "fields": {
+            "watched": false,
+            "title": "Kaguya-sama wa Kokurasetai: Ultra Romantic",
+            "rating": 0,
+            "release_date": "Apr 9, 2022",
+            "review": "-"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":3,
+        "fields": {
+            "watched": true,
+            "title": "Gintama°",
+            "rating": 4.5,
+            "release_date": "Apr 8, 2015",
+            "review": "Nice comedy and action!"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":4,
+        "fields": {
+            "watched": true,
+            "title": "Steins;Gate",
+            "rating": 4,
+            "release_date": "Apr 6, 2011",
+            "review": "I watch anime to relieve stress.. But this sh*t made me rack my brain."
+        }
+    },
+    
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":5,
+        "fields": {
+            "watched": true,
+            "title": "Shingeki no Kyojin Season 3 Part 2",
+            "rating": 4,
+            "release_date": "Apr 29, 2019",
+            "review": "rumbleee.."
+        }
+    },
+    
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":6,
+        "fields": {
+            "watched": true,
+            "title": "Gintama'",
+            "rating": 4.5,
+            "release_date": " Apr 4, 2011",
+            "review": "Hillarious yet cool anime!"
+        }
+    },
+    
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":7,
+        "fields": {
+            "watched": true,
+            "title": "Gintama: The Final",
+            "rating": 4.7,
+            "release_date": "Jan 8, 2021",
+            "review": "Very cool action, yet the comedy is spot on nonetheless"
+        }
+    },
+    
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":8,
+        "fields": {
+            "watched": true,
+            "title": "Gintama': Enchousen",
+            "rating": 4.4,
+            "release_date": "Oct 4, 2012",
+            "review": "Enough Gintama"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":9,
+        "fields": {
+            "watched": false,
+            "title": "Hunter x Hunter (2011)",
+            "rating": 0,
+            "release_date": "Oct 2, 2011",
+            "review": "-"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk":10,
+        "fields": {
+            "watched": false,
+            "title": "Ginga Eiyuu Densetsu",
+            "rating": 0,
+            "release_date": "Apr 8, 2015",
+            "review": "-"
+        }
+    }
+]
