@@ -24,7 +24,7 @@ from mywatchlist.views import show_json_by_id
 app_name = 'mywatchlist'
 
 urlpatterns = [
-    path('html/', show_mywatchlist, name='show_mywatchlist'),
+    path('/', show_mywatchlist, name='show_mywatchlist'),
 ]
 ```
 ### Create a model for `mywatchlist`
@@ -161,17 +161,32 @@ Create a folder `fixtures` and create a new file named `initial_watchlist_data.j
 ]
 ```
 ### Implement three feature: HTML, XML, and JSON
-Add 
 ```py
-path('xml/', show_xml, name='show_xml'),
-path('xml/<int:id>', show_xml_by_id, name='show_xml_by_id'),
-path('json/', show_json, name='show_json'),
-path('json/<int:id>', show_json_by_id, name='show_json_by_id'),
-```
-on `urls.py`
+# views.py
+from django.shortcuts import render
+from mywatchlist.models import WatchList
+from django.http import HttpResponse
+from django.core import serializers
 
-Add
-```py
+
+def show_mywatchlist(request):
+    data_mywatchlist_item = WatchList.objects.all()
+    amount_watched = sum(movies.watched for movies in data_mywatchlist_item)
+    amount_not_watched = len(data_mywatchlist_item) - amount_watched
+    display_message = "Congratulations, you have watched movies a lot!" if \
+        amount_watched > amount_not_watched else \
+        "Woah, you have not much watched movies!"
+
+    context = {
+        'watch_list': data_mywatchlist_item,
+        'name': 'Jovian',
+        'npm': '2106720891',
+        'display_message': display_message
+    }
+
+    return render(request, "mywatchlist.html", context)
+
+
 def show_xml(request):
     data = WatchList.objects.all()
     return HttpResponse(serializers.serialize("xml", data), 
@@ -195,4 +210,17 @@ def show_json_by_id(request, id):
     return HttpResponse(serializers.serialize("json", data), 
                         content_type="application/json")
 ```
-on `views.py`
+
+### Create a routing to the three features above
+Add the codes to `urls.py` inside `codepatterns`
+```py
+path('html/', show_mywatchlist, name='show_mywatchlist'),
+path('xml/', show_xml, name='show_xml'),
+path('xml/<int:id>', show_xml_by_id, name='show_xml_by_id'),
+path('json/', show_json, name='show_json'),
+path('json/<int:id>', show_json_by_id, name='show_json_by_id'),
+```
+
+### Deploy to heroku
+Add `python manage.py loaddata initial_watchlist_data.json` into `Procfile` so that heroku can load `initial_watchlist_data.json`
+git add, commit, and push, and tada!
