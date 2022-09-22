@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h5>Name: </h5>
-<p>{{name}}</p>
-<h5>NPM: </h5>
-<p>{{npm}}</p>
-<p>{{display_message}}</p>
+<p class="disp-msg">{{display_message}}</p>
 
-<table>
+<table class="watch-tbl">
     <tr>
     <th>Watched</th>
     <th>Title</th>
@@ -18,11 +14,23 @@
     {% comment %} Add data below {% endcomment %}
     {% for movie in watch_list %}
     	<tr>
-            <th>{{movie.watched}}</th>
-            <th>{{movie.title}}</th>
-            <th>{{movie.rating}}</th>
-            <th>{{movie.release_date}}</th>
-            <th>{{movie.review}}</th>
+            {% if movie.watched == True %}
+                <td><i class="fa fa-eye"></i></td>
+            {% else %}
+                <td><i class="fa fa-eye-slash"></i></td>
+            {% endif %}
+
+            <td>{{movie.title}}</td>
+
+            {% if movie.rating == 0.00 %}
+                <td>-</td>
+            {% else %}
+                <td><i class="fa fa-star"></i>{{movie.rating}}</td>
+            {% endif %}
+
+            <td>{{movie.release_date}}</td>
+
+            <td>{{movie.review}}</td>
         </tr>
     {% endfor %}
 </table>

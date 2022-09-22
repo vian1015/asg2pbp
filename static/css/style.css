@@ -138,3 +138,44 @@ table.item-tbl td:first-child{
     background-color: rgb(39, 40, 56, 0.9);
     border-radius: 10px 0px 0px 10px;
 }
+.disp-msg{
+    font-size: 32px;
+    font-family: 'georgia';
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4vh;
+    color: rgb(39, 40, 56)
+}
+.watch-tbl{
+    width: 100vw;
+    color: rgb(39, 40, 56, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8vw;
+    margin-top: 2vw;
+}
+.watch-tbl .fa{
+    margin-right: 4px;
+}
+.watch-tbl th{
+    padding: 10px 10px;
+    text-align: center;
+    font-weight: bold ;
+    border-radius: 10px 0px 10px 0px;
+    color:#F3DE8A;
+    background: rgb(39, 40, 56, 0.9);
+}
+.watch-tbl td{
+    padding: 10px 10px;
+    text-align: center;
+    font-weight: bold ;
+    border-radius: 5px;
+    color: rgb(39, 40, 56, 0.9);
+    background: rgba(126,127,154,0.3);
+}
+.watch-tbl tr:nth-child(odd){
+    background: rgba(138, 145, 175, 0.3);
+}
+.watch-tbl tr:hover{
+    background: rgba(243,222,138,0.3);
+}
