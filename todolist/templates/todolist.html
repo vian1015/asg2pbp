@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>Hello, world!</title>
+{% endblock meta %}
+
+{% block content %}
+  <h1>Hello, {{ user }}!</h1>
+  <table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date Created</th>
+    </tr>
+    {% for task in task_list %}
+    <tr>    
+        <th>{{task.title}}</th>
+        <th>{{task.description}}</th>
+        <th>{{task.date}}</th>
+        <th><input type="checkbox" onclick='location.href="{% url 'todolist:inverse_checkbox' task.id %}"' {% if task.is_finished %}checked="checked"{% endif %}></th>
+        <th><button><a href="{% url 'todolist:delete_task' task.id %}">Delete Task</a></button></th>
+    </tr>
+    {% endfor %}
+  </table>
+  <button><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
+  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+{% endblock content %}
