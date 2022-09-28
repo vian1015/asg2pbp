@@ -1,8 +1,8 @@
 # HEROKU APP: [LINK](https://pbp-asg2.herokuapp.com/todolist/)
-Account 1:
+## Account 1:
 `username`: test
 `password`: pbpasg4!
-Account 2:
+## Account 2:
 `username`: dummy
 `password`: pbpasg4!
 
