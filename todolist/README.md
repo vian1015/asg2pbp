@@ -5,7 +5,7 @@
 ## Account 2:
 `username`: dummy
 `password`: pbpasg4!
-
+# Assignment 4
 ## What `{% csrf_token %}` do
 Django uses the `{% csrf_token %}` tag to protect itself from malicious attacks. When rendering the page, it creates a token on the server-side and makes sure to cross-check this token for any incoming requests. The inbound requests are not carried out if they lack the token. Without `{% csrf_token %}`, our applications are vulnerable to malicious attacks.
 
@@ -377,3 +377,68 @@ Create the HTML for login and register forms
 
 ### Deploying to Heroku
 Simply push the file to github
+
+# Assignment 5
+## Difference between Inline, Internal and External CSS
+Inline CSS is used to style a specific HTML element. The advantages of using Inline CSS is that we don't need to create a separate file for styling our HTML elements. This method is time-consuming though and it also makes your HTML structure looks more messy. Internal CSS is used to style the whole HTML page with a remote CSS file. Similar to Internal CSS, the External CSS is used to style the whole HTML page, but is used by linking out web pages to an external `.css` file. By using External CSS, our HTML files will have a cleaner structure and smaller in size. 
+
+## HTML5 tags
+`<a>` defines a hyperlink
+`<body>` defines the document body
+`<button>` create a clickable button
+`<div>` specify a division or section in a document
+`<footer>` Represents the footer of a document or a section
+`<form>` Defines a HTML form for user input
+`<head>` Defines the head portion of the document
+`<header>` Represents the header of a document or a section
+`<h1>` to `<h6>` Defines HTML heading
+`<html>` Defines the root fo an HTML document
+`<img>` Represents an image
+`<input>` Defines an input control
+`<label>` Defines a label for `<input>` control
+`<li>` Defines a list of items
+`<p>` Defines a pragraph
+`<span>` Defines an inline styleless section in a document
+`<table>` Defines a data table
+`<td>` Defines a cell in a table
+`<tfoot>` Defines table footer
+`<th>` Defines a header cell in a table
+`<thead>` Groups a set of rows that describes the column labels of a table.
+`<tr>` Defines a row of cells in a table
+`<ul>` Defines an unordered list
+`<var>` Defines a variable
+
+## CSS Selectors
+`.class` Select all elements with this class
+`:first-child` Select the first child of an element
+`:hover` Select elements on mouse over
+`:last-child` Select the last child of an element
+`:nth-child()` Select certain child 
+
+## Implementation
+### Internal CSS
+Create `style.css` in `static/css` directory. 
+Link the css file to `base.html`
+```html
+...
+<head>
+    ...
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    ...
+</head>
+...
+```
+### External CSS
+I'm using Bootstrap for this assignment. Link bootstrap to `base.html`
+```html
+...
+<head>
+    ...
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    ...
+</head>
+...
+```
+Using Bootstrap, I createed a navbar. I also used bootstrap to create the cards on `login.html`, `register.html`, and `todolist.html`
+### Inline CSS
+I implement some Inline CSS too!

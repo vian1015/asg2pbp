@@ -5,29 +5,45 @@
 {% endblock meta %}
 
 {% block content %}
-
-<div class = "login">
-    <h1>Registration Form</h1>
-
-        <form method="POST" >
-            {% csrf_token %}
-            <table>
-                {{ form.as_table }}
-                <tr>
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Register"/></td>
-                </tr>
-            </table>
-        </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-        </ul>
-    {% endif %}
-
+<div class="container">
+    <div class="row align-items-center vh-100">
+        <div class="col-6 mx-auto">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="card-body">
+                    <h1>Registration Form</h1>
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Username</label>
+                            <input type="text" name="username" maxlength="150" autocapitalize="none" required id="id_username" placeholder="Username" autocomplete="username" class="form-control" aria-describedby="usernameHelpBlock">
+                            <div id="usernameHelpBlock" class="form-text">
+                                Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" name="password1" autocomplete="new-password" required id="id_password1" placeholder="Password" class="form-control" aria-describedby="password1HelpBlock">
+                            <div id="password1HelpBlock" class="form-text">
+                                <ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                            <input type="password" name="password2" autocomplete="new-password" required id="id_password2" placeholder="Password" class="form-control" aria-describedby="password2HelpBlock">
+                            <div id="password2HelpBlock" class="form-text">
+                                Enter the same password as before, for verification.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" value="Register">Register</button>
+                    </form>
+                
+                </div>
+                <div class="card-footer">
+                    Already have an account? <a href="{% url 'todolist:login' %}">Log In</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

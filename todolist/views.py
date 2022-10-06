@@ -19,7 +19,6 @@ def show_todolist(request):
         'task_list': task_list,
         'name': 'Jovian',
         'npm': 2106720891,
-        'last_login': request.COOKIES['last_login'],
     }
 
     return render(request, "todolist.html", context)

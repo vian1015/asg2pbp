@@ -7,43 +7,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   {% block meta %}
   {% endblock meta %}
 </head>
-
 <body>
-  <div class="menu-bar">
-    <ul>
-      <li><a href="../"><i class="fa fa-home"></i>Home</a></li>
-      <li><a href="#"><i class="fa fa-book"></i>Tutorial</a>
-        <div class="sub-menu-a">
-          <ul>
-            <li><a href="#">???</a></li>
-          </ul>
-        </div>
-      </li>
-      <li><a href="#"><i class="fa fa-pencil"></i>Assignment</a>
-        <div class="sub-menu-a">
-          <ul>
-            <li><a href="/katalog"><i class="fa fa-pencil"></i>Assignment 2 - Catalog</a></li>
-            <li><a href="/mywatchlist/html"><i class="fa fa-pencil"></i>Assignment 3 - Mywatchlist</a></li>
-            <li><a href="/todolist"><i class="fa fa-pencil"></i>Assignment 4 - Todolist</a></li>
-            <li><a href="#">???</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-
+  <nav class="navbar navbar-expand-lg" style="background-color: rgb(39, 40, 56);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: #F3DE8A; font-weight: bold;">
+        <img src="https://pbp-fasilkom-ui.github.io/ganjil-2023/en/img/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        PBP Assignment
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../../" style="color: #F3DE8A;"><i class="fa fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #F3DE8A;">
+              <i class="fa fa-book"></i> Assignments
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/katalog/"><i class="fa fa-book"></i> Assignment 2 - Catalog</a></li>
+              <li><a class="dropdown-item" href="/mywatchlist/html"><i class="fa fa-book"></i> Assignment 3 - MyWatchList</a></li>
+              <li><a class="dropdown-item" href="/todolist/"><i class="fa fa-book"></i> Assignment 4 - ToDoList</a></li>
+            </ul>
+          </li>
+        </ul>
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#F3DE8A;">
+                  <img src="https://i.imgur.com/dT6zENR.png" alt="Logo" width="25" height="25" class="d-inline-block align-text-top"> {{ user.username}}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'todolist:logout' %}">Logout</a></li>
+              </ul>
+          </li>
+        </ul>
+        {% else %}
+        <button type="button" class="btn btn-outline-primary"><a href="/todolist/login">Login</a></button>
+        {% endif %}        
+      </div>
+    </div>
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   {% block content %}
   {% endblock content %}
-
-  <footer>
-    <div class="web-footer">
-      Jovian M - 2106720891
-    </div>
-  </footer>
 </body>
 
 </html>
