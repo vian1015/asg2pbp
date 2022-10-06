@@ -11,7 +11,7 @@
     <button class="btn btn-success mt-2 mb-4"><a href="{% url 'todolist:create_task' %}" class="text-decoration-none text-reset">+ Create New Task</a></button>
     {% for task in task_list %}
     <div id="accordion">
-      <div class="card mb-3" style="max-width: 70vw;">
+      <div class="card mb-3 meow" style="max-width: 70vw;">
         <button class="btn {% if task.is_finished %} btn-success {% else %} btn-warning {% endif %} text-start text-decoration-none" data-bs-toggle="collapse" href="#collapse-{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse-{{ forloop.counter }}" style="color:#F3DE8A; background-color: rgb(39, 40, 56, 0.9);">
           <div class="card-header" id="headingOne" style="background-color: transparent;">
             <h5 class="mb-0">

@@ -179,3 +179,6 @@ table.item-tbl td:first-child{
 .watch-tbl tr:hover{
     background: rgba(243,222,138,0.3);
 }
+.meow:hover{
+    box-shadow: 0px 0px 10px 0px rgba(39,40,56,0.50);
+}

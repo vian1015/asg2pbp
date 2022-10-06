@@ -44,12 +44,13 @@
                   <img src="https://i.imgur.com/dT6zENR.png" alt="Logo" width="25" height="25" class="d-inline-block align-text-top"> {{ user.username}}
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'todolist:logout' %}">Logout</a></li>
+                  <li><a class="dropdown-item" href="{% url 'todolist:logout' %}"><i class="fa fa-arrow-circle-right"></i> Logout</a></li>
               </ul>
           </li>
         </ul>
         {% else %}
-        <button type="button" class="btn btn-outline-primary"><a href="/todolist/login">Login</a></button>
+        <button type="button" class="btn btn-warning me-2" style="background-color:#F3DE8A"><a href="/todolist/login" class="text-decoration-none text-reset">Login</a></button>
+        <button type="button" class="btn btn-warning" style="background-color: #F3DE8A;"><a href="/todolist/register" class="text-decoration-none text-reset">Register</a></button>
         {% endif %}        
       </div>
     </div>
