@@ -75,7 +75,7 @@ async function refreshTodolist() {
     let cnt = 0
     let htmlString = ''
     task_list.forEach((task) => {
-        console.log(task)
+        // console.log(task)
         cnt += 1
         const btn_type = task.fields.is_finished ? 'btn-outline-success' : 'btn-outline-warning'
         const style_color = task.fields.is_finished ? 'style="color: #43835c;"' : 'style="color: #f3c343;"'
